@@ -36,7 +36,8 @@ onMounted(async () => {
     const tween = gsap.to(track.value, {
       x: () => -dist(), ease: 'none',
       scrollTrigger: {
-        trigger: el, pin: true, scrub: 1, start: 'top top', anticipatePin: 1, invalidateOnRefresh: true,
+        // refreshPriority: the pin is created after its sibling sections (data is fetched first), so it must refresh first for them to account for its spacing.
+        trigger: el, pin: true, scrub: 1, start: 'top top', anticipatePin: 1, invalidateOnRefresh: true, refreshPriority: 1,
         end: () => `+=${dist()}`,
         onUpdate: (self) => gsap.set('.works__progress-bar', { scaleX: self.progress }),
       },
@@ -91,7 +92,9 @@ onMounted(async () => {
     })
     revealText(root.value.querySelector('.works__head'), { scrollTrigger: inView('.works__head') })
   })
+  // The pin adds scroll distance that sections below (created earlier) must account for.
   ScrollTrigger.refresh()
+  requestAnimationFrame(() => ScrollTrigger.refresh())
 })
 
 onBeforeUnmount(() => mm?.revert())

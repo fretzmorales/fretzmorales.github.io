@@ -81,7 +81,8 @@ onBeforeUnmount(() => mm?.revert())
   &__label { font-size: clamp(2.2rem, 7.2vw, 8rem); transition: color 0.5s, transform 0.7s var(--ease-out); }
   &__note { grid-column: 2; color: var(--muted); font-size: 0.85rem; b { color: var(--accent); margin-left: 0.5rem; } @include desktop { grid-column: auto; } }
 
-  &__viewport { overflow: hidden; }
+  // Padding keeps the tall outlined glyphs (tight line-height + stroke) from being clipped; the negative margin cancels the extra space.
+  &__viewport { overflow: hidden; padding-block: 0.9rem; margin-block: -0.9rem; }
   &__list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem;
     li { font-size: clamp(1.3rem, 3.4vw, 2.2rem); color: var(--text); opacity: 0.75; transition: color 0.3s, opacity 0.3s, transform 0.5s var(--ease-out);
       &:hover { color: var(--accent); transform: translateY(-4px); opacity: 1; }
