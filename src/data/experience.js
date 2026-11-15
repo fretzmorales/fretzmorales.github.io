@@ -1,0 +1,35 @@
+export const experience = [
+  {
+    id: 'freelance',
+    from: '2020',
+    to: 'Now',
+    range: 'January 2020 – Present',
+    title: 'Freelance WordPress Developer',
+    company: 'Independent',
+    points: [
+      'Design and develop WordPress websites.',
+      'Build custom pages using Elementor and Elementor Pro.',
+      'Implement dynamic content using ACF and JetEngine.',
+      'Create responsive layouts for desktop, tablet, and mobile.',
+      'Maintain and optimize existing websites.',
+      'Handle website migrations, DNS, and domain configurations.',
+      'Troubleshoot website performance and technical issues.',
+    ],
+  },
+  {
+    id: 'photoup',
+    from: '2016',
+    to: '2026',
+    range: 'December 2016 – May 2026',
+    title: 'Frontend Developer',
+    company: 'PhotoUp Philippines Corp.',
+    points: [
+      'Developed and maintained responsive frontend interfaces.',
+      'Worked with AngularJS, HTML, CSS, and JavaScript.',
+      'Built and maintained WordPress websites.',
+      'Developed HTML email newsletters.',
+      'Worked on internal website builder platforms.',
+      'Implemented UI improvements and frontend enhancements.',
+    ],
+  },
+]
