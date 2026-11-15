@@ -1,12 +1,11 @@
 <script setup>
-import { ArrowUp, Linkedin, Github, Mail } from 'lucide-vue-next'
+import { ArrowUp, Linkedin, Mail } from 'lucide-vue-next'
 import { scrollToTarget } from '../composables/useLenis'
 import { site } from '../data/site'
 
 const year = new Date().getFullYear()
 const socials = [
   { label: 'LinkedIn', href: site.linkedin, icon: Linkedin },
-  { label: 'GitHub', href: site.github, icon: Github },
   { label: 'Email', href: `mailto:${site.email}`, icon: Mail },
 ]
 const top = () => scrollToTarget(0, { duration: 2.2 })

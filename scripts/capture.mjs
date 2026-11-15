@@ -1,4 +1,4 @@
-// Captures desktop screenshots of the live project sites into src/assets/images (webp).
+// Captures desktop screenshots of the live project sites into public/w (webp).
 // Usage: node scripts/capture.mjs
 import puppeteer from 'puppeteer-core'
 const sites = [
@@ -22,7 +22,7 @@ for (const [slug, url] of sites) {
       b && b.click()
     })
     await new Promise((r) => setTimeout(r, 1200))
-    await page.screenshot({ path: `src/assets/images/${slug}.webp`, type: 'webp', quality: 82 })
+    await page.screenshot({ path: `public/w/${slug}.webp`, type: 'webp', quality: 82 })
     console.log('ok', slug)
   } catch (e) {
     console.log('FAIL', slug, e.message)

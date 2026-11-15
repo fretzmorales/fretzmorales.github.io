@@ -1,0 +1,51 @@
+[
+  {
+    "id": "mrrac",
+    "number": "01",
+    "title": ["Margaret River", "Air Conditioning"],
+    "name": "Margaret River Air Conditioning",
+    "url": "https://mrrac.au/",
+    "host": "mrrac.au",
+    "category": "WordPress / Website Design & Development",
+    "image": "/w/mrrac.webp",
+    "tone": "#0a1315",
+    "role": [
+      "Designed and developed the website",
+      "Built with WordPress, Elementor and ACF",
+      "Created responsive layouts",
+      "Handled website migration and domain configuration"
+    ]
+  },
+  {
+    "id": "connoley",
+    "number": "02",
+    "title": ["Connoley", "Building Group"],
+    "name": "Connoley Building Group",
+    "url": "https://connoleybuildinggroup.com.au/",
+    "host": "connoleybuildinggroup.com.au",
+    "category": "WordPress / Website Design & Development",
+    "image": "/w/connoley.webp",
+    "tone": "#0b0e17",
+    "role": [
+      "Designed and developed the website",
+      "Implemented responsive layouts",
+      "Built and customized WordPress pages"
+    ]
+  },
+  {
+    "id": "imsg",
+    "number": "03",
+    "title": ["Industrial Maintenance", "& Steel Fabrication"],
+    "name": "Industrial Maintenance & Steel Fabrication",
+    "url": "https://imsgptyltd.com/",
+    "host": "imsgptyltd.com",
+    "category": "WordPress / Website Design & Development",
+    "image": "/w/ims.webp",
+    "tone": "#10130a",
+    "role": [
+      "Designed and developed the website",
+      "Built with WordPress, Elementor and ACF",
+      "Handled website migration and domain configuration"
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
-import { ArrowUpRight, Mail, Linkedin, Github, MapPin } from 'lucide-vue-next'
+import { ArrowUpRight, Mail, Linkedin, MapPin } from 'lucide-vue-next'
 import { gsap, MQ } from '../composables/useGsap'
 import { revealText, inView } from '../composables/useReveal'
 import { site } from '../data/site'
@@ -12,7 +12,6 @@ let mm
 const links = [
   { label: 'Email', value: site.email, href: `mailto:${site.email}`, icon: Mail },
   { label: 'LinkedIn', value: site.linkedin.replace(/^https?:\/\/(www\.)?/, ''), href: site.linkedin, icon: Linkedin, ext: true },
-  { label: 'GitHub', value: site.github.replace(/^https?:\/\/(www\.)?/, ''), href: site.github, icon: Github, ext: true },
   { label: 'Location', value: site.location, icon: MapPin },
 ]
 

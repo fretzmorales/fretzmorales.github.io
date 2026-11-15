@@ -12,12 +12,15 @@ const isPreviewBuild =
   process.env.CF_PAGES === '1' && process.env.CF_PAGES_BRANCH !== site.productionBranch
 const blocked = site.discourageSearchEngines !== false || isPreviewBuild
 
+// Selected Works data + screenshots live here: always blocked from crawlers, even after launch.
+const WORKS_PATH = '/w/'
+
 const robotsTxt = blocked
   ? 'User-agent: *\nDisallow: /\n'
-  : `User-agent: *\nAllow: /\n${alwaysNoindexPaths.map((p) => `Disallow: ${p}`).join('\n')}\n`
+  : `User-agent: *\nAllow: /\n${[...alwaysNoindexPaths, WORKS_PATH].map((p) => `Disallow: ${p}`).join('\n')}\n`
 
 const headersFile = [
-  blocked ? '/*\n  X-Robots-Tag: noindex, nofollow\n' : '',
+  blocked ? '/*\n  X-Robots-Tag: noindex, nofollow\n' : `${WORKS_PATH}*\n  X-Robots-Tag: noindex, nofollow\n`,
   '/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n',
 ]
   .filter(Boolean)
@@ -30,7 +33,7 @@ function visibilityPlugin() {
   const canonical = blocked ? '' : `<link rel="canonical" href="${site.url}/" />`
   const serve = (server) => {
     server.middlewares.use((req, res, next) => {
-      if (blocked) res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+      if (blocked || req.url.startsWith(WORKS_PATH)) res.setHeader('X-Robots-Tag', 'noindex, nofollow')
       if (req.url === '/robots.txt') {
         res.setHeader('Content-Type', 'text/plain')
         return res.end(robotsTxt)

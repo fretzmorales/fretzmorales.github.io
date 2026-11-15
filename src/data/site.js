@@ -7,16 +7,15 @@ export const site = {
   productionBranch: 'main', // Cloudflare Pages branches other than this are never indexable
 
   // ── Identity (TODO: replace placeholders) ────────────────────────────
-  name: 'Your Name', // TODO
+  name: 'nfmorales',
   initials: 'YN', // TODO
   role: 'WordPress & Frontend Developer',
   location: 'Philippines',
-  email: 'hello@example.com', // TODO
-  linkedin: 'https://www.linkedin.com/in/your-handle', // TODO
-  github: 'https://github.com/your-handle', // TODO
+  email: 'moralesnoliefretz@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/noliefretz/',
   url: 'https://example.com', // TODO: production URL (used for Open Graph)
 
-  title: 'Your Name — WordPress & Frontend Developer',
+  title: 'nfmorales —WordPress & Frontend Developer',
   description:
     'Independent WordPress and Frontend Developer from the Philippines building thoughtful, functional and visually engaging websites.',
 }

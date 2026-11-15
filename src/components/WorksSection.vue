@@ -1,9 +1,8 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
 import { ArrowRight } from 'lucide-vue-next'
-import { gsap, MQ } from '../composables/useGsap'
+import { gsap, ScrollTrigger, MQ } from '../composables/useGsap'
 import { revealText, inView } from '../composables/useReveal'
-import { projects } from '../data/projects'
 import { site } from '../data/site'
 import SplitText from './SplitText.vue'
 import ProjectItem from './ProjectItem.vue'
@@ -11,11 +10,21 @@ import ProjectItem from './ProjectItem.vue'
 const root = ref(null)
 const track = ref(null)
 const current = ref(1)
+// Works are fetched at runtime from /w/ (blocked from crawlers) so they stay out of search indexes.
+const projects = ref([])
 let mm
 
 const pad = (n) => String(n).padStart(2, '0')
 
-onMounted(() => {
+onMounted(async () => {
+  try {
+    const res = await fetch('/w/projects.json')
+    if (!res.ok) throw new Error(String(res.status))
+    projects.value = await res.json()
+  } catch {
+    return
+  }
+  await nextTick()
   mm = gsap.matchMedia(root.value)
 
   // ── Desktop: pinned horizontal showcase ────────────────────────────
@@ -56,7 +65,7 @@ onMounted(() => {
         xPercent: -25, ease: 'none', scrollTrigger: { trigger: p, start: 'left right', end: 'right left', scrub: true, ...cfg },
       })
       gsap.to(el, {
-        backgroundColor: projects[i].tone, ease: 'none',
+        backgroundColor: projects.value[i].tone, ease: 'none',
         scrollTrigger: {
           trigger: p, start: 'left 55%', end: 'left 35%', scrub: true, ...cfg,
           onToggle: (s) => s.isActive && (current.value = i + 1),
@@ -82,13 +91,14 @@ onMounted(() => {
     })
     revealText(root.value.querySelector('.works__head'), { scrollTrigger: inView('.works__head') })
   })
+  ScrollTrigger.refresh()
 })
 
 onBeforeUnmount(() => mm?.revert())
 </script>
 
 <template>
-  <section id="works" ref="root" class="works" aria-labelledby="works-title">
+  <section id="works" ref="root" class="works" aria-labelledby="works-title" data-nosnippet>
     <div ref="track" class="works__track">
       <header class="works__head">
         <p class="eyebrow">02 / Selected Works</p>
