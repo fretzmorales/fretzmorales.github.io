@@ -16,7 +16,7 @@ const paragraphs = [
 
 const stats = [
   { n: 9, suffix: '+', label: 'Years of professional frontend development' },
-  { n: 6, suffix: '+', label: 'Years of freelance WordPress development' },
+  { n: 10, suffix: '+', label: 'Years of WordPress development' },
   { text: 'Intl.', label: 'Experience working with international clients' },
   { text: 'WP', label: 'Focus on WordPress, Elementor, and frontend development' },
 ]
