@@ -32,4 +32,30 @@ export const experience = [
       'Implemented UI improvements and frontend enhancements.',
     ],
   },
+  {
+    id: 'opencoat',
+    from: '2014',
+    to: '2016',
+    range: 'June 2014 – October 2016',
+    title: 'Front-End Developer',
+    company: 'Opencoat Philippines',
+    points: [
+      'Built custom WordPress themes from scratch, turning PSD designs into clean HTML/CSS and fully functional themes.',
+      'Converted design mockups into responsive WordPress websites and tailored existing themes to client requirements.',
+      'Structured content with page builders and ACF, including custom fields, custom post types, and taxonomies.',
+      'Delivered responsive layouts with Bootstrap and extended functionality using PHP, JavaScript, and jQuery.',
+    ],
+  },
+  {
+    id: 'celestate',
+    from: '2013',
+    to: '2014',
+    range: 'December 2013 – March 2014',
+    title: 'Front-End Developer',
+    company: 'Celestate Inc.',
+    points: [
+      'Developed and maintained the company website front-end.',
+      'Built and updated WordPress pages using Visual Composer.',
+    ],
+  },
 ]
