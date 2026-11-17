@@ -8,7 +8,6 @@ export const site = {
 
   // ── Identity (TODO: replace placeholders) ────────────────────────────
   name: 'nfmorales',
-  initials: 'YN', // TODO
   role: 'WordPress & Frontend Developer',
   location: 'Philippines',
   email: 'moralesnoliefretz@gmail.com',
