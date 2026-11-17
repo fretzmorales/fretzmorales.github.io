@@ -13,7 +13,7 @@ export const site = {
   location: 'Philippines',
   email: 'moralesnoliefretz@gmail.com',
   linkedin: 'https://www.linkedin.com/in/noliefretz/',
-  url: 'https://example.com', // TODO: production URL (used for Open Graph)
+  url: 'https://fretzmorales.github.io', // production URL (used for Open Graph)
 
   title: 'nfmorales — WordPress & Frontend Developer',
   description:
