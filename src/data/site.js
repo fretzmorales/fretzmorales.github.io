@@ -15,7 +15,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/noliefretz/',
   url: 'https://example.com', // TODO: production URL (used for Open Graph)
 
-  title: 'nfmorales —WordPress & Frontend Developer',
+  title: 'nfmorales — WordPress & Frontend Developer',
   description:
     'Independent WordPress and Frontend Developer from the Philippines building thoughtful, functional and visually engaging websites.',
 }
