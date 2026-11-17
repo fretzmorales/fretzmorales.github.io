@@ -110,7 +110,7 @@ onBeforeUnmount(() => mm?.revert())
           <span class="works__h-line outline" aria-hidden="true"><SplitText text="Works" /></span>
         </h2>
         <p class="works__hint">
-          Three client websites, designed &amp; built in WordPress.
+          Three client websites, developed in WordPress.
           <span class="works__drag" aria-hidden="true">Scroll <ArrowRight :size="16" /></span>
         </p>
       </header>
