@@ -10,6 +10,7 @@ import Navigation from './components/Navigation.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import WorksSection from './components/WorksSection.vue'
+import ClientsSection from './components/ClientsSection.vue'
 import ExpertiseSection from './components/ExpertiseSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -58,6 +59,7 @@ onBeforeUnmount(() => {
     <HeroSection :ready="ready" />
     <AboutSection />
     <WorksSection />
+    <ClientsSection />
     <ExpertiseSection />
     <ExperienceSection />
     <ContactSection />
