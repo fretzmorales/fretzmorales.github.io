@@ -20,7 +20,8 @@ onMounted(async () => {
   try {
     const res = await fetch('/w/projects.json')
     if (!res.ok) throw new Error(String(res.status))
-    projects.value = await res.json()
+    // Only featured projects here; the full archive lives on /works.
+    projects.value = (await res.json()).filter((p) => p.home !== false)
   } catch {
     return
   }
@@ -119,6 +120,7 @@ onBeforeUnmount(() => mm?.revert())
 
       <div class="works__end">
         <p class="display">More<br /><span class="accent">soon.</span></p>
+        <a class="link-arrow" href="/works">View all works <ArrowRight :size="16" aria-hidden="true" /></a>
         <a class="link-arrow" :href="`mailto:${site.email}`">Start a project <ArrowRight :size="16" aria-hidden="true" /></a>
       </div>
     </div>

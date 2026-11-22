@@ -47,5 +47,47 @@
       "Built with WordPress, Elementor and ACF",
       "Handled website migration and domain configuration"
     ]
+  },
+  {
+    "id": "deckheads", "number": "04", "home": false,
+    "title": ["Deck Heads", "Tasmania"], "name": "Deck Heads Tasmania",
+    "url": "https://deckheads-tas.com.au/", "host": "deckheads-tas.com.au",
+    "category": "Website Development", "image": "/w/deckheads.webp", "tone": "#14130a",
+    "role": ["Developed the website", "Created responsive layouts"]
+  },
+  {
+    "id": "precise", "number": "05", "home": false,
+    "title": ["Precise Acreage", "Solutions"], "name": "Precise Acreage Solutions",
+    "url": "https://preciseacreagesolutions.com.au/", "host": "preciseacreagesolutions.com.au",
+    "category": "Website Development", "image": "/w/precise.webp", "tone": "#0a130d",
+    "role": ["Developed the website", "Created responsive layouts"]
+  },
+  {
+    "id": "hubhound", "number": "06", "home": false,
+    "title": ["HubHound", "Investigations"], "name": "HubHound",
+    "url": "https://hubhound.com/", "host": "hubhound.com",
+    "category": "Website Development", "image": "/w/hubhound.webp", "tone": "#150a0b",
+    "role": ["Developed the website", "Created responsive layouts"]
+  },
+  {
+    "id": "kava", "number": "07", "home": false,
+    "title": ["Kava", "Digital"], "name": "Kava Digital",
+    "url": "https://kavadigital.com.au/", "host": "kavadigital.com.au",
+    "category": "Website Development", "image": "/w/kava.webp", "tone": "#100a17",
+    "role": ["Developed the website", "Created responsive layouts"]
+  },
+  {
+    "id": "intellectrical", "number": "08", "home": false,
+    "title": ["Intellectrical"], "name": "Intellectrical",
+    "url": "https://intellectrical.com.au/", "host": "intellectrical.com.au",
+    "category": "Website Development", "image": "/w/intellectrical.webp", "tone": "#0a1513",
+    "role": ["Developed the website", "Created responsive layouts"]
+  },
+  {
+    "id": "4gp", "number": "09", "home": false,
+    "title": ["4 Generation", "Plumbing"], "name": "4 Generation Plumbing",
+    "url": "https://4gp.com.au/", "host": "4gp.com.au",
+    "category": "Website Development", "image": "/w/4gp.webp", "tone": "#0a1017",
+    "role": ["Developed the website", "Created responsive layouts"]
   }
 ]

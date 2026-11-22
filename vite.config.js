@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { site, alwaysNoindexPaths } from './src/data/site.js'
 
 /**
@@ -34,6 +36,8 @@ function visibilityPlugin() {
   const serve = (server) => {
     server.middlewares.use((req, res, next) => {
       if (blocked || req.url.startsWith(WORKS_PATH)) res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+      // Clean URL: /works serves works.html (static hosts do the same in production).
+      if (/^\/works\/?(\?.*)?$/.test(req.url)) req.url = '/works.html'
       if (req.url === '/robots.txt') {
         res.setHeader('Content-Type', 'text/plain')
         return res.end(robotsTxt)
@@ -57,8 +61,13 @@ function visibilityPlugin() {
   }
 }
 
+const root = fileURLToPath(new URL('.', import.meta.url))
+
 export default defineConfig({
   plugins: [vue(), visibilityPlugin()],
   css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
-  build: { chunkSizeWarningLimit: 700 },
+  build: {
+    chunkSizeWarningLimit: 700,
+    rollupOptions: { input: { main: resolve(root, 'index.html'), works: resolve(root, 'works.html') } },
+  },
 })
