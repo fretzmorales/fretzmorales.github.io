@@ -7,8 +7,9 @@ import { ArrowUpRight } from 'lucide-vue-next'
 const root = ref(null)
 // Logos live in /w/ (blocked from crawlers), same as the Works assets.
 const companies = [
-  { id: 'photoup', name: 'PhotoUp Philippines Corporation', url: 'https://www.photoup.net/', logo: '/w/logos/photoup.png', w: 122, h: 35 },
+  { id: 'photoup', name: 'PhotoUp Philippines Corporation', url: 'https://www.photoup.net/', logo: '/w/logos/photoup.svg', w: 200, h: 49 },
   { id: 'tradiedevelopers', name: 'TradieDevelopers', url: 'https://tradiedevelopers.com.au/', logo: '/w/logos/tradiedevelopers.svg', w: 200, h: 60 },
+  { id: 'acxhub', name: 'ACXHUB', url: 'https://www.acxhub.com/ph', logo: '/w/logos/acxhub.png', w: 1561, h: 454 },
 ]
 
 onMounted(() => {
@@ -48,9 +49,9 @@ onMounted(() => {
   &__head { display: grid; gap: 1rem; justify-items: start; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
   &__title { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; line-height: 0.95; font-size: clamp(2rem, 5vw, 3.6rem); max-width: 18ch; }
 
-  &__list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); @include desktop { grid-template-columns: repeat(2, 1fr); } }
+  &__list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); @include desktop { grid-template-columns: repeat(3, 1fr); } }
   &__item a { position: relative; display: flex; align-items: center; justify-content: center; height: clamp(9rem, 18vw, 13rem); background: var(--bg); padding: 2rem; transition: background 0.5s; &:hover, &:focus-visible { background: var(--bg-2); } }
-  // One-colour treatment so the two logos match on the dark page.
+  // One-colour treatment so the logos match on the dark page.
   img { height: clamp(2.4rem, 4.5vw, 3.6rem); width: auto; max-width: 80%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.6; transition: opacity 0.4s; }
   &__item a:hover img, &__item a:focus-visible img { opacity: 1; }
   &__arrow { position: absolute; top: 1.2rem; right: 1.2rem; color: var(--accent); opacity: 0; transform: translate(-6px, 6px); transition: opacity 0.4s, transform 0.5s var(--ease-out); }

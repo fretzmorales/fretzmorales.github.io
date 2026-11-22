@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer-core'
 import { writeFile } from 'node:fs/promises'
 import { extname } from 'node:path'
 const sites = {
-  photoup: 'https://www.photoup.net/', tradiedevelopers: 'https://tradiedevelopers.com.au/',
+  photoup: 'https://www.photoup.net/', tradiedevelopers: 'https://tradiedevelopers.com.au/', acxhub: 'https://www.acxhub.com/',
 }
 const only = process.argv.slice(2)
 const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true })
